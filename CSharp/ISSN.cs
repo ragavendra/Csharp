@@ -1,4 +1,4 @@
-﻿namespace TestProject
+﻿namespace CSharp
 {
     internal interface ISSN
     {
