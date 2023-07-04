@@ -1,0 +1,47 @@
+using System;
+					
+public class Program
+{
+
+public static int MultiplyPositiveNos(int a, int b, int res = 0)
+	{
+		if(!(a >= 0) && !(b >= 0))
+		{
+			return 0;
+		}
+
+		if (a == 1)
+		{
+			// Console.WriteLine("A ");
+			return b;
+		}
+
+		if (b == 1)
+		{
+			// Console.WriteLine("B ");
+			// return a;
+			
+			if (res > 0)
+			{
+				return res;
+			}
+			else
+			{
+				return a;
+			}
+		}
+		
+		if (res == 0)
+		{
+			res = a;
+		}
+
+		var result = a + res;
+		b--;
+
+		// Console.WriteLine(result);
+		return MultiplyPositiveNos(a, b, result); 
+		//Console.WriteLine(result);
+		//return result;
+	}
+}
