@@ -153,6 +153,84 @@ namespace Csharp
             return new Entity_(entity_);
          }
 
+      // redundant
+      public static int[] SortInQueue(int[] numbers)
+      {
+         // 3 times size of un sorted array
+         // int[] sortedNos = new int[numbers.Length * 3];
+         // LinkedList<int> sortedNos = new LinkedList<int>();
+         Entity_ sortedList = new Entity_(new Entity(){ value = 0 });
+
+         // list.value = 1;
+         // list.next = new Entity();
+
+         // int mid = numbers.Length/2;
+
+         Parallel.ForEach(
+            numbers,
+            number =>
+            {
+               if (number <= sortedList?.First())
+               {  
+                  sortedList.AddFirst(number);
+                  return;
+               }
+
+               if (number > sortedList?.Last())
+               {
+                  sortedList.AddLast(number);
+                  return;
+               }
+
+               // insert between
+               if (number > sortedList?.First())
+               {
+                  if(number <= sortedList.Last())
+                  {
+                     if (number == sortedList.Last())
+                     {
+                        sortedList.AddLast(number);
+                     }
+                     else
+                     {
+                        var sortedList_ = sortedList;
+                        var first = sortedList_.First();
+
+                        // sortedList.AddAfter(, number);
+                        do
+                        {
+                           sortedList_ = sortedList_.MoveIndexNext();
+                           first = sortedList_.First();
+                        }while(first <= number);
+
+                        sortedList_.AddAfter(first, number);
+                     }
+                  }
+                  // move to next ele
+
+                  // sortedNos.AddAfter(3, number);
+          //        sortedList.AddFirst(number);
+                  return;
+               }
+
+
+            });
+
+            var sortedList1 = sortedList;
+            int[] result = new int[numbers.Length];
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+               
+              int item_ = sortedList1.First();
+              sortedList1 = sortedList1.MoveIndexNext();
+              result[i] = item_;
+            }
+
+            return result;
+      }
+
+
 
       }
 
