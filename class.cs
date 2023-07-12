@@ -54,7 +54,7 @@ Struct SampleStruct {
 //class and struct differences
 Class MainClass{
 
-	public static void main(){
+	public static void main_(){
 	
 		SampleClass Smpl = new SampleClass(3, "Some string");
 		Smpl.DoThisFunc();

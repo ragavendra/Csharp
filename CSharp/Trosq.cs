@@ -13,9 +13,9 @@ using System;
          // var arr = new int[] { 98, 87, 75, 66, 55, 33 };
          var arr = new int[] { rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100) };
 
-         var resp = QuickSort(arr, 0, arr.Length - 1);
+         QuickSort(arr, 0, arr.Length - 1);
 
-         foreach (var item in resp)
+         foreach (var item in arr)
          {
             Console.Write(item + " "); 
          }
@@ -24,11 +24,11 @@ using System;
       public static volatile int _counter;
 
       // last ele is pivot
-      public int[] QuickSort(int[] array, int lowPos, int highPos)
+      public void QuickSort(int[] array, int lowPos, int highPos)
       {
          if((highPos <= lowPos) || lowPos < 0)
          {
-            return array;
+            return;
          }
 
          // int pivot = array[array.Length - 1];
@@ -59,7 +59,7 @@ using System;
          QuickSort(array, lowPos, highPos - 1);
          QuickSort(array, highPos + 1, array.Length - 1);
 
-         return array;
+         // return array;
       }
 
       public void Swap(ref int x, ref int y)

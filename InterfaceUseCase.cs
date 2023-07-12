@@ -105,7 +105,7 @@ public class Program
 	
 	//public static List<PhysicalProduct> products {get; set;}
 	
-	public static void Main()
+	public static void Main_()
 	{
 		Customer cust = new Customer("Some cust", "cuEmail", "cusAddr");
 		List<IProduct> products = new List<IProduct>();
