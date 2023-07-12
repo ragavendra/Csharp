@@ -68,7 +68,7 @@ using System;
          x = y;
          y = z;
 
-         Console.Write(++_counter + ". ");
+         // Console.Write(++_counter + ". ");
 
       }
 
