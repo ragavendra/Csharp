@@ -1,10 +1,12 @@
+using System.Threading.Tasks;
+using System;
 
-    public static class QuickSort
+    public class QuickSort_
    {
       /// <summary>
       /// PE for the Perf Runner or Srvc.
       /// </summary>
-      public static async Task Main(string[] args)
+      public async Task Main_(string[] args)
       {
          // var arr = new int[] { 10, 12, 24, 15, 8, 12 };
          var rnd = new Random();
@@ -22,7 +24,7 @@
       public static volatile int _counter;
 
       // last ele is pivot
-      public static int[] QuickSort(int[] array, int lowPos, int highPos)
+      public int[] QuickSort(int[] array, int lowPos, int highPos)
       {
          if((highPos <= lowPos) || lowPos < 0)
          {
@@ -60,7 +62,7 @@
          return array;
       }
 
-      public static void Swap(ref int x, ref int y)
+      public void Swap(ref int x, ref int y)
       {
          int z = x;
          x = y;
