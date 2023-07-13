@@ -50,7 +50,7 @@ using System.Diagnostics.Metrics;
             {
 
                 // var arr = new int[] { 98, 87, 75, 66, 55, 33 };
-                var arr_ = new int[] { rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100) };
+                var arr_ = new int[] { rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100) };
 
                 // RunSort(quickSort.QuickSort, arr_);
 
