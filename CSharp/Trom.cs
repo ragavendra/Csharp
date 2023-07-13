@@ -7,40 +7,73 @@ public class MergeSort
 
     // void MergeSort_()
     // {
-        // divide the array up until 1 or elements - recur
-        // compare the ele and swap if necessary
+    // divide the array up until 1 or elements - recur
+    // compare the ele and swap if necessary
 
-        // int[] ele = { 6, 1, 7, 9, 24, 12, 10 };
+    // int[] ele = { 6, 1, 7, 9, 24, 12, 10 };
 
-        // Split(ele, 0, ele.Length - 1);
-        public static volatile int _counter;
+    // Split(ele, 0, ele.Length - 1);
+    public static volatile int _counter;
 
-        public void Split(int[] arr, int l, int r)
+    public void Split(int[] arr, int l, int r)
+    {
+        int[] arr_ = new int[arr.Length];
+        arr.CopyTo(arr_, 0);
+
+        Split_(arr, 0, arr.Length, arr_);
+        // Split_(arr, l, r, arr_);
+    }
+
+    public void Split_(int[] arr, int l, int r, int[] arr_)
+    {
+        if ((r - l) <= 1)
         {
-            if (l < r)
+            return;
+        }
+
+        // int mid = l + (r - l) / 2;
+        int mid = (l + r) / 2;
+        // Console.WriteLine("Counter " + _counter++);
+
+        Split_(arr_, l, mid, arr);
+        Split_(arr_, mid, r, arr);
+
+        // Console.WriteLine("l " + l + ", m " + mid + ", r " + r);
+
+        Sort(arr, l, mid, r, arr_);
+
+        // MergeSort_(arr, l, mid + 1, r);
+        // PrintArray(arr);
+    }
+
+    void Sort(int[] arrA, int left, int mid, int right, int[] arrB)
+    {
+
+        int i = left;
+        int j = mid;
+
+        for (int k = left; k < right; k++)
+        {
+            if (i < mid)
             {
-                // int mid = l + (r - l) / 2;
-                int mid = (l + r) / 2;
-                // Console.WriteLine("Counter " + _counter++);
-
-                Split(arr, l, mid);
-                Split(arr, mid + 1, r);
-
-                // Console.WriteLine("l " + l + ", m " + mid + ", r " + r);
-
-                Sort(arr, l, mid, r);
-                
-                // MergeSort_(arr, l, mid + 1, r);
-                // PrintArray(arr);
+                if (j >= right || arrB[i] <= arrB[j])
+                {
+                    arrA[k] = arrB[i];
+                    i++;
+                }
+                else
+                {
+                    arrA[k] = arrB[j];
+                    j++;
+                }
             }
             else
             {
-                // Console.WriteLine(l + " l is more than r." + r);
+                arrA[k] = arrB[j];
+                j++;
             }
         }
 
-    void Sort(int[] arr, int l, int m, int r)
-    {
         // l = 0, m = 1, r = 3
         // Console.WriteLine($"l = {l} m = {m} r = {r}");
 
@@ -55,6 +88,7 @@ if((r - m) > 1)
 {
     Split(arr, l, m);
 }*/
+/*
 
         if (((m - l) < 1) || ((r - m) < 1))
         {
@@ -111,17 +145,17 @@ if((r - m) > 1)
 
             // Console.WriteLine();
             // PrintArray(arr);
-        }
+        }*/
 
     }
 
-      public void Swap(ref int x, ref int y)
-      {
-         int z = x;
-         x = y;
-         y = z;
-         // Console.Write(++_counter + ". ");
-      }
+    public void Swap(ref int x, ref int y)
+    {
+        int z = x;
+        x = y;
+        y = z;
+        // Console.Write(++_counter + ". ");
+    }
 
     void PrintArray(int[] arr)
     {
