@@ -15,6 +15,14 @@ public class MergeSort
     // Split(ele, 0, ele.Length - 1);
     public static volatile int _counter;
 
+    public int[] _array;
+
+/*
+    public MergeSort(int[] arr)
+    {
+        _array = arr;
+    }*/
+
     public void Split(int[] arr, int l, int r)
     {
         int[] arr_ = new int[arr.Length];
@@ -49,28 +57,32 @@ public class MergeSort
     void Sort(int[] arrA, int left, int mid, int right, int[] arrB)
     {
 
-        int i = left;
-        int j = mid;
+        int left_ = left;
+        int mid_ = mid;
 
         for (int k = left; k < right; k++)
         {
-            if (i < mid)
+            if (left_ < mid)
             {
-                if (j >= right || arrB[i] <= arrB[j])
+                if (mid_ >= right || arrB[left_] <= arrB[mid_])
                 {
-                    arrA[k] = arrB[i];
-                    i++;
+                    arrA[k] = arrB[left_];
+                    left_++;
                 }
                 else
                 {
-                    arrA[k] = arrB[j];
-                    j++;
+                    arrA[k] = arrB[mid_];
+                    mid_++;
                 }
+            }
+            else if(left_ == mid)
+            {
+                arrA[k] = arrB[mid_];
+                mid_++;
             }
             else
             {
-                arrA[k] = arrB[j];
-                j++;
+                Console.WriteLine("Should I be here!");
             }
         }
 
