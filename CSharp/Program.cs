@@ -9,8 +9,28 @@ using System.Diagnostics.Metrics;
 //        public static void Main()
         {
             // MergeSort();
+            /*
+
+            static double Root(double no, double rootOf)
+            {
+                return Math.Pow(no, 1/rootOf);
+            }
 
             var rnd = new Random();
+            int no = 6;
+
+            do
+            {
+                double log = Math.Log(++no);
+                
+                // double pow = Math.Pow(Math.E, log);
+                // double log = Math.Log10(++no);
+
+                // Console.WriteLine(no + " " + log + " " + pow);
+                Console.WriteLine(no + " " + log);
+            }
+            while(no < 100);
+
 
             var arr_ = new int[] { 98, 87, 75, 66, 55, 33 };
             // var arr_ = new int[] { rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100) };
@@ -20,6 +40,7 @@ using System.Diagnostics.Metrics;
             // bool flag;
             // Action<int[], int, int> sort;
 
+            Stopwatch stopWatch = new Stopwatch();
             Meter meter = new Meter("Sort");
 
             var counter = meter.CreateCounter<double>(
@@ -27,73 +48,22 @@ using System.Diagnostics.Metrics;
                 unit: "loops",
                 description: "Time for each algs."
             );
-
-            Stopwatch stopWatch = new Stopwatch();
-
+*/
+/*
             int times = 10;
 
             Console.WriteLine("Quick Merge - 6 elements");
-
-            /*
-                     do
-                     {
-                        if(flag)
-                        {
-                            sort = quickSort.QuickSort;
-                        }
-                        else
-                        {
-                            sort = mergeSort.Split;
-                        }
-                     }
-                     while(true);*/
-
-
-            // do
             {
-
-                // var arr = new int[] { 98, 87, 75, 66, 55, 33 };
-                // var arr_ = new int[] { rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100) };
-
-                // RunSort(quickSort.QuickSort, arr_);
 
                 PrintArray(arr_);
 
                 RunSort(mergeSort.Split, arr_);
 
                 PrintArray(arr_);
-/*
-                var arr = arr_;
 
-                stopWatch.Start();
-
-                quickSort.QuickSort(arr, 0, arr.Length - 1);
-                stopWatch.Stop();
-                Console.Write(stopWatch.Elapsed.TotalMilliseconds);
-                counter.Add(stopWatch.Elapsed.TotalMilliseconds);
-                stopWatch.Reset();
-
-                arr = null;
-
-                arr = arr_;
-
-                stopWatch.Start();
-                mergeSort.Split(arr, 0, arr.Length - 1);
-                stopWatch.Stop();
-                Console.Write(" " + stopWatch.Elapsed.TotalMilliseconds);
-                counter.Add(stopWatch.Elapsed.TotalMilliseconds);
-                stopWatch.Reset();
-                Console.WriteLine();
-*/
-                /*
-                         if(Console.ReadKey().Key != null)
-                         {
-                            break;
-                         }*/
-
-            }
+            }*/
             // while (true);
-
+/*
             void RunSort(Action<int, int> method, int[] array)
             {
 
@@ -108,11 +78,6 @@ using System.Diagnostics.Metrics;
 
                 CheckSorted(arr);
 
-/*
-                foreach (var item in arr)
-                {
-                    Console.Write(item + " ");
-                }*/
             }
 
             void CheckSorted(int[] arr)
@@ -144,7 +109,8 @@ using System.Diagnostics.Metrics;
                 {
                     Console.Write(item + " ");
                 }
-            }
+            }*/
+            Program.Main();
 
             // while(times-- > 0);
 
