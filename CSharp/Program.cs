@@ -12,8 +12,11 @@ using System.Diagnostics.Metrics;
 
             var rnd = new Random();
 
+            var arr_ = new int[] { 98, 87, 75, 66, 55, 33 };
+            // var arr_ = new int[] { rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100) };
+
             var quickSort = new QuickSort_();
-            var mergeSort = new MergeSort();
+            var mergeSort = new MergeSort(arr_);
             // bool flag;
             // Action<int[], int, int> sort;
 
@@ -50,7 +53,7 @@ using System.Diagnostics.Metrics;
             {
 
                 // var arr = new int[] { 98, 87, 75, 66, 55, 33 };
-                var arr_ = new int[] { rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100) };
+                // var arr_ = new int[] { rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100) };
 
                 // RunSort(quickSort.QuickSort, arr_);
 
@@ -91,12 +94,12 @@ using System.Diagnostics.Metrics;
             }
             // while (true);
 
-            void RunSort(Action<int[], int, int> method, int[] array)
+            void RunSort(Action<int, int> method, int[] array)
             {
 
                 var arr = array;
                 stopWatch.Start();
-                method(arr, 0, arr.Length - 1);
+                method(0, arr.Length - 1);
                 stopWatch.Stop();
                 Console.Write(" " + stopWatch.Elapsed.TotalMilliseconds);
                 counter.Add(stopWatch.Elapsed.TotalMilliseconds);

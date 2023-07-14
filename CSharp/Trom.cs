@@ -17,18 +17,21 @@ public class MergeSort
 
     public int[] _array;
 
-/*
+    public int[] _arrayCopy;
+
     public MergeSort(int[] arr)
     {
         _array = arr;
-    }*/
+        _arrayCopy = new int[_array.Length];
+        // _arrayCopy = arr;
+    }
 
-    public void Split(int[] arr, int l, int r)
+    public void Split(int l, int r)
     {
-        int[] arr_ = new int[arr.Length];
-        arr.CopyTo(arr_, 0);
+        // int[] arr_ = new int[_array.Length];
+        _array.CopyTo(_arrayCopy, 0);
 
-        Split_(arr, 0, arr.Length, arr_);
+        Split_(_array, 0, _array.Length, _arrayCopy);
         // Split_(arr, l, r, arr_);
     }
 
@@ -47,7 +50,6 @@ public class MergeSort
         Split_(arr_, mid, r, arr);
 
         // Console.WriteLine("l " + l + ", m " + mid + ", r " + r);
-
         Sort(arr, l, mid, r, arr_);
 
         // MergeSort_(arr, l, mid + 1, r);
