@@ -28,7 +28,7 @@ public class Adapter : Adaptee
 
 public partial class Program
 {
-    public static void Main()
+    public static void Main__()
     {
         Adapter adapter = new Adapter();
         adapter.PrintWordA("adlskjasl");
