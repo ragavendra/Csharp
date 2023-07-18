@@ -66,7 +66,8 @@ public class MergeSort
         {
             if (left_ < mid)
             {
-                if (mid_ >= right || arrB[left_] <= arrB[mid_])
+                // if (mid_ >= right || arrB[left_] <= arrB[mid_])
+                if (mid_ == right || arrB[left_] <= arrB[mid_])
                 {
                     arrA[k] = arrB[left_];
                     left_++;

@@ -2,6 +2,16 @@ using System;
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
 
+// var arr_ = new int[] { 98, 87, 75, 66, 55, 33 };
+
+var rnd = new Random();
+var arr_ = new int[] { rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100), rnd.Next(100) };
+
+var mergeSort = new MergeSort(arr_);
+mergeSort.Split(0, arr_.Length - 1);
+
+// Program.Main();
+
 //namespace Csharp
 {
 //    public class Program
@@ -110,7 +120,6 @@ using System.Diagnostics.Metrics;
                     Console.Write(item + " ");
                 }
             }*/
-            Program.Main();
 
             // while(times-- > 0);
 
