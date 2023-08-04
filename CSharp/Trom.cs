@@ -4,9 +4,6 @@ using System.Threading;
 
 public class MergeSort
 {
-
-    // void MergeSort_()
-    // {
     // divide the array up until 1 or elements - recur
     // compare the ele and swap if necessary
 
@@ -88,79 +85,6 @@ public class MergeSort
                 Console.WriteLine("Should I be here!");
             }
         }
-
-        // l = 0, m = 1, r = 3
-        // Console.WriteLine($"l = {l} m = {m} r = {r}");
-
-        /*
-                if (l == m)
-                { 
-                    return;
-                }*/
-
-        /*
-if((r - m) > 1)
-{
-    Split(arr, l, m);
-}*/
-/*
-
-        if (((m - l) < 1) || ((r - m) < 1))
-        {
-            if (arr[l] <= arr[m])
-            {
-                if (arr[m] <= arr[r])
-                {
-                    // sorted set
-                    // Console.WriteLine("Should be rare!");
-                    return;
-                }
-            }
-
-            // int k;
-
-            if (m != r)
-            {
-                // from right first
-                if (arr[r] < arr[m])
-                {
-                    Swap(ref arr[m], ref arr[r]);
-                }
-            }
-
-            if (l != m)
-            {
-                // swap
-                if (arr[m] < arr[l])
-                {
-                    Swap(ref arr[l], ref arr[m]);
-                }
-            }
-        }
-
-        // if size of array greater than 1
-        // if(((m - l) > 1) || ((r - m) > 1))
-        {
-            int k = m + 1;
-            for (int i = 0; i < m; i++)
-            {
-                // Console.Write(arr[i] + "i ");
-                for (int j = m; j <= r; j++)
-                {
-                    // Console.Write(arr[j] + "j ");
-                    if (arr[i] < arr[j])
-                    { }
-                    else
-                    {
-                        Swap(ref arr[i], ref arr[j]);
-                    }
-                }
-            }
-            // Split(arr, l, m);
-
-            // Console.WriteLine();
-            // PrintArray(arr);
-        }*/
 
     }
 

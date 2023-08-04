@@ -24,6 +24,7 @@ public class SortingRunner
         // var rnd = new Random();
         int no = 6;
 
+        /*
         do
         {
             double log = Math.Log(++no);
@@ -34,7 +35,7 @@ public class SortingRunner
             // Console.WriteLine(no + " " + log + " " + pow);
             Console.WriteLine(no + " " + log);
         }
-        while (no < 100);
+        while (no < 100);*/
 
 
         // var arr_ = new int[] { 98, 87, 75, 66, 55, 33 };
