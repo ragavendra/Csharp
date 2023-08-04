@@ -100,12 +100,12 @@ public class CourseProduct : IProduct{
 	}
 }
 
-public class Program
+public partial class Program
 {
 	
 	//public static List<PhysicalProduct> products {get; set;}
 	
-	public static void Main_()
+	public static void Main_6_()
 	{
 		Customer cust = new Customer("Some cust", "cuEmail", "cusAddr");
 		List<IProduct> products = new List<IProduct>();
