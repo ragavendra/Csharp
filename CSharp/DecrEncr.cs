@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Text;
 using System.Security.Cryptography;
 
 // namespace Csharp
@@ -59,6 +60,24 @@ public class DecrEncr
             Console.WriteLine("Encryption failed " + ex);
         }
 
+    }
+
+    public void ToASCIIAndString(string inputString)
+    {
+        var bytes = Encoding.ASCII.GetBytes("Some string here");
+
+        // dec 97 to 122 is lcase
+        // dec 65 to 90 is ucase
+        // nos 30 to 39
+        foreach (byte b in bytes)
+        {
+            Console.WriteLine(b);
+        }
+
+        // get the str back
+        var same = Encoding.ASCII.GetString(bytes);
+
+        Console.WriteLine(same);
     }
 
     public static void EncryptFile_(string filename)
